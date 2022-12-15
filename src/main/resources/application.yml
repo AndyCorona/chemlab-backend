@@ -1,0 +1,38 @@
+spring:
+  mvc:
+    servlet:
+      path: /api/v1
+  datasource:
+    username: root
+    password: Amysql@.123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/chemlab
+    hikari:
+      # 空闲连接超时时间
+      idle-timeout: 3000
+      # 最小空闲连接
+      minimum-idle: 5
+      # 最大连接数
+      maximum-pool-size: 10
+      # 空闲连接超时时间
+      max-lifetime: 60000
+      # 连接超时时间
+      connection-timeout: 60000
+      # 测试是否可以使用的查询语句
+      connection-test-query: SELECT 1
+server:
+  port: 8888
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    path: chemlab.html
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+logging:
+  level:
+    com:
+      baomidou:
+        mybatisplus=DEBUG:
